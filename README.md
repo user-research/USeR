@@ -3,8 +3,7 @@ This is the code repository of USeR a User Story Evaluation Robot.
 
 USeR is a web-based user story eReviewer tool that allows authors like product owners in agile software projects to assess and optimize user story quality through a user interface for instant, consistent, and explainable user feedback supporting fast and easy quality optimizations.
 
-This repository implements USeR and a small user stories example dataset.
-
+This repository implements USeR and a small start user stories example dataset.
 
 ## Create a new environment
 ```
@@ -17,7 +16,7 @@ make up
 http://localhost:3000
 ```
 
-## Starting with an empty app, change config options in /config/user/default.cfg
+Starting with an empty app, change config options in /config/user/default.cfg
 
 1. Define first your project identifier(s). Multiple projects are possible, separated by a comma (,p2,p3)
 
@@ -50,7 +49,7 @@ corpus_raw_file = ./importer/corpus.{project}.raw.csv
 corpus_file = ./data/corpus.{project}.csv
 ```
 
-5. Create a project importer in the importer folder e.g. P1Importer.py that imports the raw user stories into the /data folder. 
+5. Update the P1Importer.py (or create a new *Importer.py) that imports the raw user stories into the /data folder. 
 The importer can be adapted to the project-specific CSV format.
 
 6. Finally, execute:
@@ -65,7 +64,9 @@ make restart
 ```
 
 ## Tests
-## Run all tests
+
+Run all tests
+
 ```
 make test
 ```
