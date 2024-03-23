@@ -1,8 +1,8 @@
-Key,Summary,Images,Linked.Issues,Description,Shortname,CR.FK.Link,Story.Points,Akzeptanzkriterien,Attachment,Has.Title,Has.Persona,Has.What,Has.Why,Has.Acceptance.Criteria,Has.Additionals,Has.Attachments
-P1-1,Ausnahme für Datei-Speicherung,,,,,,8,,,1,0,0,0,0,0,0
-P1-2,DB-Optimierung: Dateilocking (Integration Umgebung fertig stellen),,P1-71,,,,1,,,1,0,0,0,0,0,0
-P1-3,Anwendung: Performance (Integration Test-Cases),,P1-3,,,,5,,,1,0,0,0,0,0,0
-P1-4,Anwendung umbauen Teil I: Pflege Datei-Verwaltung,,,,,,13,,,1,0,0,0,0,0,0
+Key,Summary,Images,Linked.Issues,Description,Shortname,Story.Points,Akzeptanzkriterien,Attachment,Has.Title,Has.Persona,Has.What,Has.Why,Has.Acceptance.Criteria,Has.Additionals,Has.Attachments
+P1-1,Ausnahme für Datei-Speicherung,,,,,8,,,1,0,0,0,0,0,0
+P1-2,DB-Optimierung: Dateilocking (Integration Umgebung fertig stellen),,P1-71,,,1,,,1,0,0,0,0,0,0
+P1-3,Anwendung: Performance (Integration Test-Cases),,P1-3,,,5,,,1,0,0,0,0,0,0
+P1-4,Anwendung umbauen Teil I: Pflege Datei-Verwaltung,,,,,13,,,1,0,0,0,0,0,0
 P1-5,Zentrales Logging II,,,"Als Administrator von Anwendung-B möchte ich LOG-Level zentral konfigurieren können um den Programmablauf bei wesentlichen Szenarien nachzuvollziehen zu können.
  Ziel: Die wesentlichen Schritte der Applikationslogik sind nachvollziehbar
  Szenarien:
@@ -13,4 +13,4 @@ P1-5,Zentrales Logging II,,,"Als Administrator von Anwendung-B möchte ich LOG-L
  siehe auch: Liste der Ereignisse
  Akzeptanz:
  Integration-Tests für die genannten Szenarien sind vorhanden
- LOG-Details werden von den Entwicklern selbst definiert",,NA,8,NA,,1,1,1,1,1,1,0
+ LOG-Details werden von den Entwicklern selbst definiert",,8,NA,,1,1,1,1,1,1,0

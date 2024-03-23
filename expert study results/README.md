@@ -1,8 +1,8 @@
 1. Metrics development
 
 - literature_review_references.csv (Results of the initial literature review)
-- brainstorming_results.csv (Brainstorming results with the Scrum practitioners)
-- research_group_results.csv (Our collecting results from the research group meetings)
+- brainstorming_results.csv (Brainstorming results from the Scrum practitioners)
+- research_group_results.csv (Our collected results from the research group meetings)
 
 2. Computational ratings
 
@@ -13,7 +13,7 @@
 
 - percentiles.automotive.csv (Percentiles of the computationally generated metrics)
 - percentiles.health.csv (Percentiles of the computationally generated metrics)
-- percentiles.global.csv (Percentiles calculated from the combination of the automotive and health datasets)
+- percentiles.global.csv (Percentiles calculated from the combination of both datasets)
 
 4. Correlation plots
 
@@ -28,4 +28,4 @@
 6. Expert ratings
 
 - experts.automotive.csv (Ratings from the two automotive experts (E1, E2) for the 50 automotive user stories)
-- experts.health.csv (Ratings from the two health experts (E3, E4) for the 50 automotive user stories)
+- experts.health.csv (Ratings from the two health experts (E3, E4) for the 50 health user stories)
