@@ -1,0 +1,12 @@
+usid,text,title_label,persona_label,what_label,why_label,acceptance_criteria_label,additionals_label,attachments_label
+P1-1,Umbrüche für Datei-Speicherung.,1,0,0,0,0,0,0
+P1-2,Fehlermeldungen und Statistiken für die Anwendung.,1,0,0,0,0,0,0
+P1-3,DB-Optimierung Dateilocking Integration Umgebung fertig stellen.,1,0,0,0,0,0,0
+P1-54,BUILD Scripte aufsetzten.,1,0,0,0,0,0,0
+P1-69,"Datei-Speicherung. Als Anwender soll der Datei-Speicherung Part-II zur Verfügung stehen, damit ich Dateien erhalte. Weiter Informationen. Dateien immer erstellen. Die Datei-Erstellung ist sicherheitsrelevant. Siehe link Akzeptanzkriterien. Fall-A. Fall-B. Fall-BB. Fall-BB8. Fall-C. Fall-CC. Fall-D. Fall-DD. Anhänge A.pdf, B.pdf",1,1,1,1,1,1,1
+P1-70,De-Anwendung-A-isierung.,1,0,0,0,0,0,0
+P1-71,Performance Integration Test-Cases für Anwendung.,1,0,0,0,0,0,0
+P1-72,Anwendungsüberführung,0,0,0,0,0,0,0
+P1-124,Anwendung-A Feature Erweiterung für Dateien integrieren.,1,0,0,0,0,0,0
+P1-127,Als User will ich eine nachhaltige Performance Steigerung durch die Architektur Änderung erhalten für große Anfragen.,1,1,1,0,0,0,0
+P1-130,Zentrales Logging. NA.,1,0,0,0,0,0,0

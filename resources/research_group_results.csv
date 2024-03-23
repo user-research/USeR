@@ -1,0 +1,32 @@
+Metric,Description
+has_additionals,Checking the presence of additional information beside default fields
+num_domain_words,Counting the number of domain keywords
+customer_speak,Checking the story is written in the customer language
+num_words,Measuring the number of words
+has_correct_order,"Checking the correct order of the fields (e.g., 1st. title, 2nd. persona, ...)"
+num_slang_words,Measuring the number of individual “team slang” keywords
+abbr_story,"Measuring the ratio between abbreviations (e.g., ID, PW, UI) words and unique words to check on a ""abbreviation""-story"
+has_persona,Checking the presence of a persona
+has_what,Checking the presence of the what criteria
+has_acs,Checking the presence of acceptance criteria
+has_attachments,Checking the presence of attachments
+format_complete,"Measuring  the number of filled-in default fields (title, persona, what, why, ac, attachments)  to check completeness"
+num_filled_form_fields,Number of filled form fields/patterns
+slang_story,"Measuring the ratio between ""slang"" words and unique words to check on a ""slang""-story"
+num_sentences,Measuring the number of sentences
+sentence_sparse,Measuring the orientation to an average sentence count
+num_conj_words,"Measuring the number of conjunction words (e.g., and, but, either)"
+conj_story,"Evaluating the ratio between conjunction words (e.g., and, but, either) and unique words to check on a ""conjunction""-story"
+tech_story,"Measuring the ratio between technical words and unique words to check on a ""technical""-story"
+num_unspecific_words,"Measuring the number of unspecific terms (e.g., many, some, a bit)"
+unspecific_story, "Measuring the ratio between number of unspecific terms (e.g., many, some, a bit) and unique words to check on a ""unspecific""-story"
+stop_words_story,"Measuring the ratio between stop words and unique words to check on a ""stop-word""-story"
+time_current_update,Measuring the time between the last update and the current
+time_est_update,Measuring the time between the last update and estimation
+story_points,Evaluating the number of story points
+num_abbr_words,Checking the number of abbreviations
+time_dev_update,Measuring the time between last update and development
+num_stop_words,"Measuring the number of stop words (e.g., the, is, are)"
+num_outgoing_links,Measuring the number of outgoing links
+num_chars,Measuring the number of characters
+word_sparse,Measuring the orientation to an average word count

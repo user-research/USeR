@@ -1,0 +1,168 @@
+.app {
+  display: flex;
+  justify-content: flex-start;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  text-align: center;
+}
+
+ul.percentiles {
+  margin: 5px 0;
+}
+
+label, button {
+  vertical-align: middle;
+}
+
+.header {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.editor {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 432px;
+  height: 170px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: center;
+}
+
+.disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.user_story {
+  position: relative;
+  width: 100%;
+  height: 100%;  
+}
+
+.text_area {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 426px;
+  height: 138px;
+  resize: none;
+  z-index: 1;
+}
+
+.loader {
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  width: 20px;
+  height: 20px;
+  z-index: 2;
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid black;
+  border-radius: 50%;
+  animation: spin 2s linear infinite;
+  transform: translateY(-50%) translateX(-50%);
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.metrics_grid {
+  width: 432px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+
+.metric {
+  width: 140px;
+  border: 1px dotted gray;
+  margin: 0 0 3px 0;
+  position: relative;
+  background-color: rgb(237, 237, 237);
+}
+
+.metric .name, .value {
+  font-size: smaller;
+  height: 16px;
+}
+
+.metric.col_middle {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.metric.row_last {
+  margin-bottom: 0px;
+}
+
+.metric .info {
+  position: absolute;
+  font-size: x-small;
+  float: right;
+  top: 1px;
+  right: 2px;
+  color: black;
+}
+
+.tooltip {
+  visibility: hidden;
+  width: 150px;
+  background-color: white;
+  color: black;
+  text-align: left;
+  font-size: small;
+  border: 1px solid black;
+  border-radius: 6px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 135%;
+  margin-left: -60px;
+}
+
+.tooltip .desc {
+  text-align: justify;
+  padding: 5px;
+}
+
+.hypenate {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+.metric:hover .tooltip {
+  visibility: visible;
+}
+
+.red {
+  background-color:lightcoral;
+}
+
+.green {
+  background-color:lightgreen;
+}
+
+.yellow {
+  background-color: lightyellow;
+}
+
+.footer {
+  font-size: smaller;
+}
