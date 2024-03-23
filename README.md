@@ -3,7 +3,7 @@ This is the code repository of USeR a User Story Evaluation Robot.
 
 USeR is a web-based user story eReviewer tool that allows authors like product owners in agile software projects to assess and optimize user story quality through a user interface for instant, consistent, and explainable user feedback supporting fast and easy quality optimizations.
 
-This repository implements USeR and a small start user stories example dataset.
+This repository implements USeR and a **demo** user stories dataset.
 
 ## Create a new environment
 ```
