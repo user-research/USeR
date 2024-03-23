@@ -140,3 +140,9 @@ Archive/
 # Sentence transformer parts
 .locks/
 models--*/
+
+# Keep text cache folder empty, in case tests.tearDown won't work
+/api/tests/cache/*
+
+# Local vscode configs
+.vscode/*

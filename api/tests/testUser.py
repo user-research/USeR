@@ -90,7 +90,7 @@ A.pdf, B.pdf
         self.assertEqual(output, expected)
 
     def test_independent(self):
-        expected = 0.2148481532286787
+        expected = 0.21484815322867878
         i = self.m.get_metric('independent')
         output = i.run()
 
