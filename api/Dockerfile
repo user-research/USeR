@@ -18,7 +18,7 @@ COPY Pipfile .
 #COPY Pipfile.lock .
 
 RUN pipenv install --verbose && \
-    pipenv run python -m spacy download de_core_news_md
+    pipenv run python -m spacy download de_core_news_lg
 
 COPY . .
 

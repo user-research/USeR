@@ -1,5 +1,11 @@
 from config.user.UserConfigParser import config
+import logging
 import pandas as pd
+import os
+
+# https://docs.python.org/3/howto/logging.html
+logging.basicConfig(
+    filename=config['app']['sys_log_file'], format='%(levelname)s: %(asctime)s %(message)s', encoding='utf-8', level=logging.DEBUG)
 
 class Corpora():
     '''
@@ -27,9 +33,14 @@ class Corpora():
         """
         Load user stories to a specific project
         """
+        corpus = pd.DataFrame()
         corpus_file = config['project']['corpus_file'].format(project=project)
-        corpus = pd.read_csv(corpus_file, encoding='utf-8')
 
+        if os.path.exists(corpus_file):
+            corpus = pd.read_csv(corpus_file, encoding='utf-8')
+        else:
+            logging.error(f'Corpus file {corpus_file} cannot be loaded')
+        
         return corpus
 
     def load_corpora(self):
