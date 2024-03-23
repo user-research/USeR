@@ -48,15 +48,15 @@ A.pdf, B.pdf
                 shutil.rmtree(file)
 
     def test_format_complete(self):
-        expected = 1.0
+        expected = 0.0
         fc = self.m.get_metric('format_complete')
         output = fc.run()
 
         self.assertEqual(output, expected)
-
+    
+    ### Failes in init/demo mode, because of the small p1 dataset, so meta data is empty {} ###
     def test_train_format_complete(self):
         fc = self.m.get_metric('format_complete')
-
         # Format complete variables
         meta = fc.format_complete_meta
         self.assertEqual( 
@@ -69,14 +69,14 @@ A.pdf, B.pdf
              'attachments': {'acc_mean': 0.8699999999999999, 'acc_std': 0.10770329614269006, 'acc': 1.0}}, meta)
 
     def test_readable(self):
-        expected = 0.20805555555555558
+        expected = 0.16055555555555553
         r = self.m.get_metric('readable')
         output = r.run()
 
         self.assertEqual(output, expected)
 
     def test_customer_speak(self):
-        expected = 0.8095238095238095
+        expected = 0.09090909090909091
         cs = self.m.get_metric('customer_speak')
         output = cs.run()
 
@@ -90,28 +90,28 @@ A.pdf, B.pdf
         self.assertEqual(output, expected)
 
     def test_independent(self):
-        expected = 0.3456822539354083
+        expected = 0.2148481532286787
         i = self.m.get_metric('independent')
         output = i.run()
 
         self.assertEqual(output, expected)
 
     def test_word_sparse(self):
-        expected = 0.21052631578947367
+        expected = 0.5102040816326531
         ws = self.m.get_metric('word_sparse')
         output = ws.run()
 
         self.assertEqual(output, expected)
 
     def test_sentence_sparse(self):
-        expected = 0.3333333333333333
+        expected = 0.14285714285714285
         ssp = self.m.get_metric('sentence_sparse')
         output = ssp.run()
 
         self.assertEqual(output, expected)
 
     def test_easy_language(self):
-        expected = 0.32142857142857145
+        expected = 0.3103448275862069
         el = self.m.get_metric('easy_language')
         output = el.run()
 

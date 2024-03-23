@@ -16,10 +16,7 @@ class BaseStats(object):
     BaseStats class
     """
     def __init__(self, setting='', project=''):
-        self.correlations = []
-        self.mlm_stats_file = ''
         self.percentiles = []
-        self.plspm_calc = None
         self.project = project
         self.predictions = pd.DataFrame()
         self.setting = setting

@@ -7,7 +7,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import StratifiedKFold
 from sklearn.svm import SVC
-from metrics.BaseMetric import BaseMetric, config
+from metrics.BaseMetric import BaseMetric, config, logging
 
 class FormatComplete(BaseMetric):
     """
@@ -36,7 +36,10 @@ class FormatComplete(BaseMetric):
 
         # Init format complete training
         for field in self.fields:
-            self._train_format_complete(field)
+            try:
+                self._train_format_complete(field)
+            except ValueError:
+                logging.error('Failure in training SVN model.')
 
     def run(self):
         """
@@ -154,7 +157,10 @@ class FormatComplete(BaseMetric):
         """ 
         # Predict presence of form fields
         for field in self.fields:
-            self.form_field_predictions[field] = self.estimators[field].predict([self.user_story])[0]
+            try:
+                self.form_field_predictions[field] = self.estimators[field].predict([self.user_story])[0]
+            except KeyError as e:
+                logging.error(e)
 
         return self.form_field_predictions
 

@@ -13,12 +13,15 @@ class P1Importer(Importer):
 
         # Map project export csv fields to standardized tool fields
         for _, story in self.raw_corpus.iterrows():
-            text = self.cleaner.convert_and_clean(story.Text)
-            attachments = story.Attachments
+            shortname = story.Shortname
+            summary = self.cleaner.clean(story.Summary)
+            description = self.cleaner.convert_and_clean(story.Description)
+            acceptance_criteria = self.cleaner.convert_and_clean(story.Akzeptanzkriterien)
+            attachments = story.Attachment
 
             patterns = []
 
-            for pattern in [text, attachments]:
+            for pattern in [shortname, summary, description, acceptance_criteria, attachments]:
                 if len(pattern) > 0:
                     pattern = self.cleaner.check_punct(pattern)
                     patterns.append(pattern)
@@ -37,8 +40,6 @@ class P1Importer(Importer):
                 'acceptance_criteria_label': story['Has.Acceptance.Criteria'],
                 'additionals_label': story['Has.Additionals'],
                 'attachments_label': story['Has.Attachments']})
-
-        
 
         self.corpus = pd.DataFrame(corpus)
         pd.DataFrame(self.corpus).to_csv(self.corpus_file, index=False)

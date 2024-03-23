@@ -34,7 +34,6 @@
         }
     },
     "projects": {
-        "p1": "Automotive",
-        "p2": "Health"
+        "p1": "P1"
     }
 }

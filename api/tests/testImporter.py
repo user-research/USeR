@@ -1,7 +1,7 @@
 import os
 os.environ['ENV'] = 'TEST'
 from config.user.UserConfigParser import config
-from api.importer.P1Importer import P1Importer
+from importer.P1Importer import P1Importer
 import unittest
 
 """

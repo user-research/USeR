@@ -1,20 +1,12 @@
 from config.user.UserConfigParser import config
 import click
 from flask.cli import FlaskGroup
-from helper.Cleaner import Cleaner
-from api.importer.P1Importer import P1Importer
-from importer.P2Importer import P2Importer
+from importer.P1Importer import P1Importer
 from itertools import islice
-from metrics.BaseMetric import BaseMetric
 from metrics.Metrics import Metrics
-from sklearn.model_selection import train_test_split
-from spacy.tokens import DocBin, Doc
 from stats.ProjectStats import ProjectStats
 from stats.GlobalStats import GlobalStats
-
 import pandas as pd
-import random
-import re
 
 # https://github.com/shap/shap/issues/2909
 # https://github.com/lmcinnes/umap/issues/1004
@@ -58,8 +50,6 @@ def list_modules():
 def import_corpus(project):
     if project == 'p1':
         importer = P1Importer()
-    elif project == 'p2':
-        importer = P2Importer()
     importer.import_corpus()
 
 @cli.command('generate_predictions')
@@ -112,8 +102,8 @@ def predict_small():
 @cli.command('debug')
 def debug():
     # For cli debugging
-    #m = Metrics()
-    #cs = m.get_metric('customer_speak')
+    m = Metrics()
+    cs = m.get_metric('customer_speak')
 
 if __name__ == "__main__":
     cli()

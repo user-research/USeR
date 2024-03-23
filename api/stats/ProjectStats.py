@@ -1,11 +1,8 @@
 from config.user.UserConfigParser import config
 from metrics.Metrics import Metrics
-import itertools as it
 import math
-import numpy as np
 import os
 import pandas as pd
-import scipy.stats as scst
 from stats.BaseStats import BaseStats
 from tqdm import tqdm
 
@@ -50,8 +47,6 @@ class ProjectStats(BaseStats):
         else:
             self._generate_comp_predictions()
             self._add_likert_scale_expert_predictions()
-            # Uncomment to add user story text to predictions
-            #self._add_story_text()
 
             # Store and cache predictions
             self.predictions = self.predictions.sort_values(by=['comp_total'])
@@ -116,13 +111,3 @@ class ProjectStats(BaseStats):
                 continue
 
             self.predictions.at[idx, 'expert_rating'] = expert_entry['rating_median']
-
-    def _add_story_text(self):
-        """
-        Add the user story text to predictions to better interpret metrics values related to the story text
-        """
-        self.predictions['user_story'] = ''
-
-        for idx, _ in self.predictions.iterrows():
-            user_story = self.corpus.loc[self.corpus['usid'] == self.predictions.loc[idx]['usid']]
-            self.predictions.at[idx, 'user_story'] = user_story['text'].to_string(index = False)

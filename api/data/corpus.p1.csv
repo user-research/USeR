@@ -1,0 +1,6 @@
+usid,text,title_label,persona_label,what_label,why_label,acceptance_criteria_label,additionals_label,attachments_label
+P1-1,Ausnahme für Datei-Speicherung.,1,0,0,0,0,0,0
+P1-2,DB-Optimierung Dateilocking Integration Umgebung fertig stellen.,1,0,0,0,0,0,0
+P1-3,Anwendung Performance Integration Test-Cases.,1,0,0,0,0,0,0
+P1-4,Anwendung umbauen Teil Pflege Datei-Verwaltung.,1,0,0,0,0,0,0
+P1-5,Zentrales Logging II. Als Administrator von Anwendung-B möchte ich LOG-Level zentral konfigurieren können um den Programmablauf bei wesentlichen Szenarien nachzuvollziehen zu können. Ziel Die wesentlichen Schritte der Applikationslogik sind nachvollziehbar Szenarien. User anlegen. Datei anlegen. Datei bearbeiten tbc siehe auch Liste der Ereignisse Akzeptanz Integration-Tests für die genannten Szenarien sind vorhanden. LOG-Details werden von den Entwicklern selbst definiert. NA.,1,1,1,1,1,1,0

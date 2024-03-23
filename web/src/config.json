@@ -1,8 +1,8 @@
 {
   "name": "USeR",
-  "desc": "A User Story eRepairman.",
+  "desc": "A User Story eReviewer.",
   "version": 0.6,
-  "contact": "contact@mail.domain",
+  "contact": "contact@user-research",
   "metrics": [{
       "key": "format_complete",
       "value": -1
@@ -33,8 +33,6 @@
     {
       "key":"p1",
       "default":true
-    }, {
-      "key":"p2"
     }
   ]
 }

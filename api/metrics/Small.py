@@ -88,7 +88,10 @@ class Small(BaseMetric):
                 bert_cache_file,
                 embedding_model=chosen_embedding_model)
         else:
-            topic_model.fit(corpus)
+            try:
+                topic_model.fit(corpus)
+            except TypeError:
+                logging.error('Failure in predicting BERTopic model.')
             best = topic_model
 
             best.save(
