@@ -4,15 +4,15 @@ import pandas as pd
 
 class Importer(object):
     
-    corpus = pd.DataFrame()
-    raw_corpus = pd.DataFrame()
+    backlog = pd.DataFrame()
+    raw_backlog = pd.DataFrame()
     cleaner = Cleaner()
 
     def __init__(self, project):
-        self.corpus_raw_file = config['project']['corpus_raw_file'].format(project=project)
-        self.corpus_file = config['project']['corpus_file'].format(project=project)
-        self.raw_corpus = pd.read_csv(
-            self.corpus_raw_file, encoding='utf-8', keep_default_na=False)
+        self.backlog_raw_file = config['project']['backlog_raw_file'].format(project=project)
+        self.backlog_file = config['project']['backlog_file'].format(project=project)
+        self.raw_backlog = pd.read_csv(
+            self.backlog_raw_file, encoding='utf-8', keep_default_na=False)
 
-    def get_corpus(self):
-        return self.corpus
+    def get_backlog(self):
+        return self.backlog

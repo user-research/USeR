@@ -1,5 +1,5 @@
 
-Setup a corpus file like corpus.projectA.raw.csv that contains the user stories. The file is a CSV file exported from the user story management e.g., Jira.
+Setup a backlog file like backlog.projectA.raw.csv that contains the user stories. The file is a CSV file exported from the user story management e.g., Jira.
 
 --- Field Descriptions ---
 Key:         Defines a unique identifier for the user story

@@ -23,7 +23,7 @@ class Independent(BaseMetric):
 
     def independent(self):
         """
-        Calculates the independent metric. It uses the user story and the corpus to calculate the cosine similarity.
+        Calculates the independent metric. It uses the user story and the backlog to calculate the cosine similarity.
         """
         cache_file = config['project']['independent_file'].format(project=self.project)
 
@@ -40,7 +40,7 @@ class Independent(BaseMetric):
         similarities = []
         search_doc = self.nlp(self.user_story)
 
-        for _, story in self.corpora.get_corpus(self.project).iterrows():
+        for _, story in self.backlogs.get_backlog(self.project).iterrows():
             main_doc = self.nlp(story['text'])
             similarity_value = main_doc.similarity(search_doc)
             similarities.append(similarity_value)

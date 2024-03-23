@@ -60,8 +60,8 @@ class Small(BaseMetric):
         # https://maartengr.github.io/BERTopic/index.html
         # Support multilingual model for German
 
-        # Use full corpus to optimize topic modelling by sharper spliting default and context topics
-        corpus = self.corpora.get_corpus(self.project)['text'].tolist()
+        # Use full backlog to optimize topic modelling by sharper spliting default and context topics
+        backlog = self.backlogs.get_backlog(self.project)['text'].tolist()
 
         # Use spaCy tokenizer for German
         vectorizer = TfidfVectorizer(tokenizer=self._spacy_tokenizer)
@@ -89,7 +89,7 @@ class Small(BaseMetric):
                 embedding_model=chosen_embedding_model)
         else:
             try:
-                topic_model.fit(corpus)
+                topic_model.fit(backlog)
             except TypeError:
                 logging.error('Failure in predicting BERTopic model.')
             best = topic_model
@@ -117,7 +117,7 @@ class Small(BaseMetric):
             # Hierarchical structure
             show_hierarchical_topics_file = config['project']['show_hierarchical_topics_file'].format(project=self.project)
             if not os.path.exists(show_hierarchical_topics_file):
-                hierarchical_topics = self.topic_model.hierarchical_topics(corpus)
+                hierarchical_topics = self.topic_model.hierarchical_topics(backlog)
                 html = self.topic_model.visualize_hierarchy(hierarchical_topics=hierarchical_topics).to_html()
                 func = open(show_hierarchical_topics_file, "w")
                 func.write(html)

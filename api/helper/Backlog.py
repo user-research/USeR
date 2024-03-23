@@ -7,46 +7,46 @@ import os
 logging.basicConfig(
     filename=config['app']['sys_log_file'], format='%(levelname)s: %(asctime)s %(message)s', encoding='utf-8', level=logging.DEBUG)
 
-class Corpora():
+class Backlog():
     '''
-    Handles all access to corpora/backlog of user stories
+    Handles all access to the backlogs of user stories
     '''
     # Contains all project user stories
-    corpora = {}
+    backlogs = {}
 
     def __init__(self):
-        self.load_corpora()
+        self.load_all_backlogs()
 
-    def get_corpus(self, project):
+    def get_backlog(self, project):
         """
         Returns project related user stories
         """
-        return self.corpora[project]
+        return self.backlogs[project]
     
     def get_all(self):
         """
-        Returns all project corpora and user stories
+        Returns all project backlog and user stories
         """
-        return self.corpora
+        return self.backlogs
     
-    def load_corpus(self, project):
+    def load_backlog(self, project):
         """
         Load user stories to a specific project
         """
-        corpus = pd.DataFrame()
-        corpus_file = config['project']['corpus_file'].format(project=project)
+        backlog = pd.DataFrame()
+        backlog_file = config['project']['backlog_file'].format(project=project)
 
-        if os.path.exists(corpus_file):
-            corpus = pd.read_csv(corpus_file, encoding='utf-8')
+        if os.path.exists(backlog_file):
+            backlog = pd.read_csv(backlog_file, encoding='utf-8')
         else:
-            logging.error(f'Corpus file {corpus_file} cannot be loaded')
+            logging.error(f'backlog file {backlog_file} cannot be loaded')
         
-        return corpus
+        return backlog
 
-    def load_corpora(self):
+    def load_all_backlogs(self):
         """
         Load all user stories from configured projects
         """
         projects = config['app']['projects'].split(r',')
         for project in projects:
-            self.corpora[project] = self.load_corpus(project)
+            self.backlogs[project] = self.load_backlog(project)

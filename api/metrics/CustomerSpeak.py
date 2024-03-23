@@ -85,12 +85,12 @@ class CustomerSpeak(BaseMetric):
         """
         glossary = []
 
-        # Get full corpus
-        corpus = self.corpora.get_corpus(self.project)['text']
+        # Get full backlog
+        backlog = self.backlogs.get_backlog(self.project)['text']
 
         # Get words that have stories in common
         tfidf_vector = TfidfVectorizer(tokenizer=self.cleaner.spacy_tokenizer_without_ner)
-        X = tfidf_vector.fit_transform(corpus)
+        X = tfidf_vector.fit_transform(backlog)
         feature_names = tfidf_vector.get_feature_names_out()
 
         frequencies = sorted(list(zip(feature_names, X.sum(0).getA1())), key = lambda x: x[1], reverse = True)
@@ -106,7 +106,7 @@ class CustomerSpeak(BaseMetric):
         Extract named entities.
         """
         glossary = []
-        for story in self.corpora.get_corpus(self.project)['text']:
+        for story in self.backlogs.get_backlog(self.project)['text']:
             ners = self.cleaner.spacy_ner_tokenizer(story)
             for ner in ners:
                 glossary.append(ner)
@@ -120,7 +120,7 @@ class CustomerSpeak(BaseMetric):
         Extract words to whom we can not found a lemma.
         """
         glossary = []
-        for story in self.corpora.get_corpus(self.project)['text']:
+        for story in self.backlogs.get_backlog(self.project)['text']:
             # skip ner tokens
             tokens = self.cleaner.get_cleaned_spacy_tokens_without_ner(story)
             for token in tokens:

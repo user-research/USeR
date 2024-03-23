@@ -1,4 +1,4 @@
-Setup a corpus file like corpus.projectA.raw.csv that contains the test user stories.
+Setup a backlog file like backlog.projectA.raw.csv that contains the test user stories.
 The field descriptions should be equally defined like the project *.csv file to run also the importer tests.
 
 --- Field Descriptions ---

@@ -20,7 +20,7 @@ class FormatComplete(BaseMetric):
         # Reset project var in context of format complete metric which works across projects
         self.project = ""
 
-        # User story format fields, we need to select the lable data in the corpus
+        # User story format fields, we need to select the lable data in the backlog
         self.fields = config['app']['fields'].split(r',')
 
         # Format complete variables
@@ -67,7 +67,7 @@ class FormatComplete(BaseMetric):
         """
         Get the length of all documents
         """
-        return len(pd.concat(self.corpora.get_all()))
+        return len(pd.concat(self.backlogs.get_all()))
 
     def get_form_field_predictions(self):
         """
@@ -85,9 +85,9 @@ class FormatComplete(BaseMetric):
         """
         Train method to setup the predictions SVM models
         """
-        tmp_corpora = pd.concat(self.corpora.get_all())
-        X = tmp_corpora['text'].to_numpy()
-        y = tmp_corpora[field+'_label'].to_numpy()
+        tmp_backlogs = pd.concat(self.backlogs.get_all())
+        X = tmp_backlogs['text'].to_numpy()
+        y = tmp_backlogs[field+'_label'].to_numpy()
 
         cache_file = config['global']['format_complete_file'].format(field=field)
         

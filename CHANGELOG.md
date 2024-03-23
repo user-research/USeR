@@ -14,14 +14,14 @@
 
 * 0.4 (Jan 29, 2023)
 
-- Include corpus importer functionality with individual spaCy sentence recognizer
-- Change to SVM training with greater corpus
+- Include backlog importer functionality with individual spaCy sentence recognizer
+- Change to SVM training with greater backlog
 - Add log functionality
 - Include remote debugger in docker container
 
 * 0.5 (Aug 6, 2023)
 
-- Connect health project corpus into prediction handling
+- Connect health project backlog into prediction handling
 - Change indicator name "Valuable" to "Customer Speak" and "Pattern Complete" to "Format complete"
 - Include training models on meta level for multi projects
 - Add multiple regression evaluation

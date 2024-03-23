@@ -19,7 +19,7 @@ class SentenceSparse(BaseMetric):
     def sentence_sparse(self):
         """ 
         Calculates the distance in percentage between 0 and 1 between the mean number of sentences 
-        of the user stories in the corpus and the sentence count of the current user story
+        of the user stories in the backlog and the sentence count of the current user story
         """
         doc = self.nlp(self.user_story)
         num_sentences = len(list(doc.sents))

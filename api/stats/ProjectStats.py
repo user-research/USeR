@@ -32,9 +32,9 @@ class ProjectStats(BaseStats):
         self.usids = pd.read_csv(
             config[self.setting]['usids_file'].format(project=self.project), encoding='utf-8')
 
-        # Add the full corpus to query user stories
-        self.corpus = pd.read_csv(
-            config[self.setting]['corpus_file'].format(project=self.project), encoding='utf-8')
+        # Add the full backlog to query user stories
+        self.backlog = pd.read_csv(
+            config[self.setting]['backlog_file'].format(project=self.project), encoding='utf-8')
 
     def generate_predictions(self):
         """
@@ -61,7 +61,7 @@ class ProjectStats(BaseStats):
             total=len(self.usids),
             desc=f"{self.project}: Comp Predicting Progress")
         for _,usid in enumerate(self.usids['usid']):
-            user_story = self.corpus.loc[self.corpus['usid'] == usid]
+            user_story = self.backlog.loc[self.backlog['usid'] == usid]
             if user_story.empty:
                 continue
 

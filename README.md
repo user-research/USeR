@@ -45,8 +45,8 @@ The variable {project} should match the previously defined project name **p1**
 
 ```
 [project]
-corpus_raw_file = ./importer/corpus.{project}.raw.csv
-corpus_file = ./data/corpus.{project}.csv
+backlog_raw_file = ./importer/backlog.{project}.raw.csv
+backlog_file = ./data/backlog.{project}.csv
 ```
 
 5. Update the P1Importer.py (or create a new *Importer.py) that imports the raw user stories into the /data folder. 

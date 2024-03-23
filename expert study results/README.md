@@ -22,7 +22,7 @@
 
 5. Backlog statistics
 
-- backlog.statistics.automotive.csv (Automotive dataset statistics e.g., corpus length, minimum and maximum number of words in a user story, ...)
+- backlog.statistics.automotive.csv (Automotive dataset statistics e.g., backlog length, minimum and maximum number of words in a user story, ...)
 - backlog.statistics.automotive.csv (The health dataset statistics)
 
 6. Expert ratings

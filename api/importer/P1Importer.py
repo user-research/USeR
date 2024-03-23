@@ -8,11 +8,11 @@ class P1Importer(Importer):
     def __init__(self):
         super().__init__(self.project)
 
-    def import_corpus(self):
-        corpus = []
+    def import_backlog(self):
+        backlog = []
 
         # Map project export csv fields to standardized tool fields
-        for _, story in self.raw_corpus.iterrows():
+        for _, story in self.raw_backlog.iterrows():
             shortname = story.Shortname
             summary = self.cleaner.clean(story.Summary)
             description = self.cleaner.convert_and_clean(story.Description)
@@ -28,7 +28,7 @@ class P1Importer(Importer):
 
             text = ' '.join(patterns)
             
-            corpus.append({
+            backlog.append({
                 'usid': story.Key,
                 'text': text,
                 
@@ -41,5 +41,5 @@ class P1Importer(Importer):
                 'additionals_label': story['Has.Additionals'],
                 'attachments_label': story['Has.Attachments']})
 
-        self.corpus = pd.DataFrame(corpus)
-        pd.DataFrame(self.corpus).to_csv(self.corpus_file, index=False)
+        self.backlog = pd.DataFrame(backlog)
+        pd.DataFrame(self.backlog).to_csv(self.backlog_file, index=False)

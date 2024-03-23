@@ -47,10 +47,10 @@ def list_modules():
 
 @cli.command('import')
 @click.argument('project')
-def import_corpus(project):
+def import_backlog(project):
     if project == 'p1':
         importer = P1Importer()
-    importer.import_corpus()
+    importer.import_backlog()
 
 @cli.command('generate_predictions')
 def generate_predictions():
@@ -86,11 +86,11 @@ def predict_small():
         # Add user story ids where we want to predict the quality
         usids = pd.read_csv(config['project']['usids_file'].format(project=project), encoding='utf-8')
 
-        # Add the full corpus to query user stories
-        corpus = pd.read_csv(config['project']['corpus_file'].format(project=project), encoding='utf-8')
+        # Add the full backlog to query user stories
+        backlog = pd.read_csv(config['project']['backlog_file'].format(project=project), encoding='utf-8')
 
         for _,usid in enumerate(usids['usid']):
-            user_story = corpus.loc[corpus['usid'] == usid]
+            user_story = backlog.loc[backlog['usid'] == usid]
             if user_story.empty:
                 continue
 

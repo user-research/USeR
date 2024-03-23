@@ -1,6 +1,6 @@
 from config.user.UserConfigParser import config
 from helper.Cleaner import Cleaner
-from helper.Corpora import Corpora
+from helper.Backlog import Backlog
 import logging as logging
 from metrics.MetricsRegistry import BaseRegisteredClass
 import numpy as np
@@ -79,13 +79,13 @@ class BaseMetric(BaseRegisteredClass):
     # Add german (adopted from english) base form lemmatizer
     nlp.add_pipe("base_form_lemmatizer")
     # Load all user stories
-    corpora = Corpora()
+    backlogs = Backlog()
     # Cleaning and tokenizing text
     cleaner = Cleaner()
 
     def __init__(self, project="p1", user_story="", usid=None):
         
-        # Corpus,-length and user story ids vec to select stories
+        # Backlog,-length and user story ids vec to select stories
         self.project = project
 
         # User story text and id
@@ -109,9 +109,9 @@ class BaseMetric(BaseRegisteredClass):
 
     def _get_text_statistics(self):
         """
-        Helper to retrieve the calculated text statistics of the user stories in a corpus
+        Helper to retrieve the calculated text statistics of the user stories in a backlog
         """
-        statistics_file = config['project']['corpus_statistics'].format(project=self.project)
+        statistics_file = config['project']['backlog_statistics'].format(project=self.project)
 
         if not os.path.exists(statistics_file):
             self._calc_text_statistics()
@@ -122,19 +122,19 @@ class BaseMetric(BaseRegisteredClass):
 
     def _calc_text_statistics(self):
         """
-        Helper to calculates the maximal sentence count of a user story in a corpus
+        Helper to calculates the maximal sentence count of a user story in a backlog
         """
         word_counts = []
         sentence_counts = []
 
-        for _, story in self.corpora.get_corpus(self.project).iterrows():
+        for _, story in self.backlogs.get_backlog(self.project).iterrows():
             doc = self.nlp(story['text'])
             word_counts.append(len(doc))
             sentence_counts.append(len(list(doc.sents)))
 
-        statistics_file = config['project']['corpus_statistics'].format(project=self.project)
+        statistics_file = config['project']['backlog_statistics'].format(project=self.project)
 
-        pd.DataFrame({'corpus_length':len(self.corpora.get_corpus(self.project)),
+        pd.DataFrame({'backlog_length':len(self.backlogs.get_backlog(self.project)),
                       'min_word_count':np.min(word_counts),
                       'mean_word_count':np.mean(word_counts),
                       'max_word_count':np.max(word_counts),
