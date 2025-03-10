@@ -1,0 +1,38 @@
+{
+  "name": "USeR",
+  "desc": "A User Story eReviewer.",
+  "version": 0.6,
+  "contact": "contact@user-research",
+  "metrics": [{
+      "key": "format_complete",
+      "value": -1
+    }, {
+      "key": "readable",
+      "value": -1
+    }, {
+      "key": "customer_speak",
+      "value": -1
+    }, {
+      "key": "small",
+      "value": -1
+    }, {
+      "key": "independent",
+      "value": -1
+    }, {
+      "key": "word_sparse",
+      "value": -1
+    }, {
+      "key": "sentence_sparse",
+      "value": -1
+    }, {
+      "key": "easy_language",
+      "value": -1
+    }
+  ],
+  "projects": [
+    {
+      "key":"p1",
+      "default":true
+    }
+  ]
+}

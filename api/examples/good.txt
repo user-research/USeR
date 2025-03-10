@@ -1,0 +1,6 @@
+Als QA will ich eine stabile Testumgebung, um die Qualität der Anwendung sicherstellen zu können.
+
+* Tests laufen ohne process-isolation.
+* Speichergrenze bei x Tests < xGB.
+
+Test.config

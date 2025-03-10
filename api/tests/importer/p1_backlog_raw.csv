@@ -1,0 +1,24 @@
+key,title,description,acceptance_criteria,attachments,has_title,has_persona,has_what,has_why,has_acceptance_criteria,has_attachments
+P1-1,MIGRATION SETUP,,,,1,0,0,0,0,0
+P1-2,,"Als QA will ich eine stabile Testumgebung, um die Qualität der Anwendung sicherstellen zu können.","* Tests laufen ohne process-isolation.
+* Speichergrenze bei x Tests < xGB.",Test.config,0,1,1,1,1,1
+P1-3,,"Als Administrator von Anwendung-D möchte ich, dass die Anwendung-D auf der gleichen Basis operiert, wie Anwendung-B. Dies vereinfacht die Administration des Environments.","* Alle Stylesheets werden von Anwendung-D-2 geliefert.
+** Die Styles von Anwendung-D-1 werden konsolidiert und überflüssige Styles sind entfernt.
+* Alle JS-Dateien werden von Anwendung-D-2 geliefert.
+** Die JS Dateien sind in der Produktivumgebung zusammengefasst und komprimiert.
+* Der FE-Einsprung erfolgt über Anwendung-D-2.
+* Alle Informationen werden von Anwendung-D-2 geliefert.
+* Performance
+** Die Auslieferung der Daten erfolgt nicht langsamer als in Anwendung-D-1.",styles.txt,0,1,1,1,1,1
+P1-4,TITEL ZEICHENBESCHRÄNKUNG,,,,1,0,0,0,0,0
+P1-5,VORLAG PRÜFUNG,,,,1,0,0,0,0,0
+P1-6,,"Als Administrator möchte man eine neuer Benutzergruppe erstellen können, damit man eine Menge an Benutzern für einen Berechtigungsort gemeinsame Gruppenberechtigungen vergeben kann.","# Neue Benutzergruppen können nur von Administratoren und Superuser angelegt werden.
+# Pflichtfelder sind: Gruppenname, Eigentümerkonto, Eigentümergruppe.",ablauf_diagram.jpg,0,1,1,1,1,1
+P1-7,GLOBALE ZWISCHENABLAGE,,,,1,0,0,0,0,0
+P1-8,,"Als Administrator möchte ich die Eigentumsrechte eines Benutzers an einen Nachfolger übertragen können, damit die Arbeit in Anwendung-B durch einen Vertreter wiederaufgenommen werden kann.","# Wenn ein Benutzer aus einer Benutzergruppe entfernt wird, kann er als Eigentümer nach wie vor alle Dateien dieser Benutzergruppe bearbeiten. Alle Dateien deren Eigentümer er ist und die der Benutzergruppe zugeordnet sind, deren Gruppenrecht er verloren hat, sollen an einen Nachfolger übergeben werden können.
+# Wenn ein Benutzer deaktiviert wird, müssen alle Dateien an einen Nachfolger übergeben werden. Damit die Verteilung der Dateien erfolgen kann, soll die Verteilung der Dateien über deren Benutzergruppen an ausgewählte Benutzer erfolgen können. 
+# Wenn ein Benutzer gelöscht wird, werden alle Dateien an einen Nachfolger übergeben. Damit die Verteilung der Dateien erfolgen kann, soll die Verteilung der Dateien über deren Benutzergruppen an ausgewählte Benutzer erfolgen können.","_thumb_3743.png, _thumb_8563.png",0,1,1,1,1,1
+P1-9,MITARBEITER-FREIGABE,,,,1,0,0,0,0,0
+P1-10,,"Als Benutzer möchte ich bei Selektion einer Sprache die Oberfläche lokalisiert dargestellt haben, damit ich in meiner Zielsprache die Inhalte lesen kann.","# kein harter Reload.
+# Wird eine Sprache selektiert, ist der Anwendung-NPP Inhalt in der selektierten Sprache darzustellen. 
+# Setzen der Sprache: Root > Session-Cookies > Deutsch","_thumb_1673.png, Texte.csv",0,1,1,1,1,1

@@ -1,0 +1,39 @@
+{
+    "metrics": {
+        "format_complete": {
+            "name": "Format Complete",
+            "desc": "Shows whether the story follows the Connextra template by evaluating the ratio of available versus the total number of template fields: Title, Persona, What, Why, ACs, and Attachments."
+        },
+        "readable": {
+            "name": "Readable",
+            "desc": "Shows the Flesch readability by evaluating the ratio of the current readabilty versus the maximum readability."
+        },
+        "customer_speak": {
+            "name": "Customer Speak",
+            "desc": "Shows whether the story is written in the customer language by evaluating the ratio of present domain keywords versus the total number of words."
+        },
+        "small": {
+            "name": "Small",
+            "desc": "Show whether the story address a single feature by calculating the ratio between project topics found in the story and the total number of project topics."
+        },
+        "independent": {
+            "name": "Independent",
+            "desc": "Shows whether the story is independent to other project stories by evaluating the semantical distance to other stories."
+        },
+        "word_sparse": {
+            "name": "Word Sparse",
+            "desc": "Shows whether the story keeps short by evaluating the ratio of the word count versus the mean number of words of all project stories."
+        },
+        "sentence_sparse": {
+            "name": "Sentence Sparse",
+            "desc": "Shows whether the story keeps short by evaluating the ratio of the sentence count versus the mean number of sentences of all project stories."
+        },
+        "easy_language": {
+            "name": "Easy Language",
+            "desc": "Shows whether the story uses common words by evaluatiing the ratio between the present easy language words versus the total story words."
+        }
+    },
+    "projects": {
+        "p1": "P1"
+    }
+}
