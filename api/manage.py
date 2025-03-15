@@ -34,7 +34,6 @@ def import_backlog(env:str):
     """
     Import the backlog
     """
-    print(env)
     if env == 'TEST':
         os.environ['ENV'] = 'TEST'
         load_config()
