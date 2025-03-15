@@ -1,4 +1,4 @@
-Please set up a backlog file like p2_backlog_raw.csv for the importer that contains the raw user stories.
+Please set up a backlog TEST file like p2_backlog_raw.csv for the importer that contains the raw user stories.
 
 Below are the field descriptions from the "demo" German data set as orientation. But any other field definitions are possible. The final mapping between the provided and mandatory fields for USeR will be defined in, e.g., p2_importer.py.
 

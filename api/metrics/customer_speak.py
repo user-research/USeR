@@ -2,8 +2,8 @@ from metrics.base_metric import BaseMetric, config
 import numpy as np
 import os
 import pandas as pd
-import string
 from sklearn.feature_extraction.text import TfidfVectorizer
+import string
 
 class CustomerSpeak(BaseMetric):
     """

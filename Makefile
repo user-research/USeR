@@ -24,8 +24,14 @@ train:
 	${docker-compose} exec api pipenv run python manage.py train
 
 import:
-	${docker-compose} exec api pipenv run python manage.py import
-
+	@if [ -n "$(env)" ]; then \
+		echo "${docker-compose} exec api pipenv run python manage.py import --env=$(env)"; \
+		${docker-compose} exec api pipenv run python manage.py import --env=$(env); \
+	else \
+		echo "${docker-compose} exec api pipenv run python manage.py import"; \
+		${docker-compose} exec api pipenv run python manage.py import; \
+	fi
+	
 predict:
 	${docker-compose} exec api pipenv run python manage.py generate_predictions
 

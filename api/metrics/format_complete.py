@@ -1,12 +1,12 @@
 from metrics.base_metric import BaseMetric, config, logging
 from numpy import mean, std
 import os
-import pickle
 import pandas as pd
+import pickle
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.pipeline import Pipeline
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import StratifiedKFold
+from sklearn.pipeline import Pipeline
 from sklearn.svm import SVC
 
 class FormatComplete(BaseMetric):

@@ -1,5 +1,4 @@
 from config.config_parser import config
-import math
 from metrics.metrics import Metrics
 import os
 import pandas as pd

@@ -1,10 +1,12 @@
-from config.config_parser import config
+from config.config_parser import config, load_config
+import click
 from flask.cli import FlaskGroup
 from importer.p1_importer import P1Importer
 from metrics.metrics import Metrics
+import os
 import pandas as pd
-from stats.project_stats import ProjectStats
 from stats.global_stats import GlobalStats
+from stats.project_stats import ProjectStats
 
 # https://github.com/shap/shap/issues/2909
 # https://github.com/lmcinnes/umap/issues/1004
@@ -27,10 +29,16 @@ def train():
         Metrics(project=project)
 
 @cli.command('import')
-def import_backlog():
+@click.option("--env", is_flag=False)
+def import_backlog(env:str):
     """
     Import the backlog
     """
+    print(env)
+    if env == 'TEST':
+        os.environ['ENV'] = 'TEST'
+        load_config()
+
     projects = config['app']['projects'].split(r',')
     for project in projects:
         if project.capitalize() + 'Importer' in globals():

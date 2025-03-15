@@ -1,5 +1,5 @@
-import textstat
 from metrics.base_metric import BaseMetric
+import textstat
 
 class Readable(BaseMetric):
     """
