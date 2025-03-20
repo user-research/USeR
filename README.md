@@ -75,12 +75,14 @@ projects = p1,p2
 make test
 ```
 
-## Restart app
+## Restart the app
+
 ```
 make restart
 ```
 
-## Shutdown environment
+## Shutdown the environment
+
 ```
 make stop
 ```
