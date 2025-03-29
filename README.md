@@ -90,3 +90,6 @@ make stop
 ## References
 
 This code repository has been utilized in the context of the following publication: Hallmann, D., Jacob, K., Lüttgen, G., Schmid, U., & von der Weth, R. (2025). USeR: A Web-based User Story eReviewer for Assisted Quality Optimizations. arXiv preprint arXiv:2503.02049. [PDF](https://arxiv.org/pdf/2503.02049)
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
